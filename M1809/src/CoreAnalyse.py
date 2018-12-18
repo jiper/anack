@@ -547,12 +547,12 @@ if __name__ =='__main__':
     
     # 2. 获取数据
     a = Compare2Themself(Config.company_id_list[0])    #自身对比
-    a.to_csv('../output/compare_self.csv', encoding= 'gbk') 
-    b1= Compare2Industry(Config.company_id_list)    #同行业对比
-    b1.to_csv('../output/compare_industry.csv', encoding = 'gbk')
-    b = data_normalize(b1)  #归一化的同行业对比
-    b.to_csv('../output/normalize.csv', encoding = 'gbk') 
-    
-    # 3. 分析并保存图片
-    Analyse(a,b)
-    PlotAnalyse.PlotAnalyse(a)
+#    a.to_csv('../output/compare_self.csv', encoding= 'gbk') 
+#    b1= Compare2Industry(Config.company_id_list)    #同行业对比
+#    b1.to_csv('../output/compare_industry.csv', encoding = 'gbk')
+#    b = data_normalize(b1)  #归一化的同行业对比
+#    b.to_csv('../output/normalize.csv', encoding = 'gbk') 
+#    
+#    # 3. 分析并保存图片
+#    Analyse(a,b)
+#    PlotAnalyse.PlotAnalyse(a)
