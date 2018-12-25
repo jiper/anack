@@ -217,7 +217,8 @@ def Compare2Themself(target_id, start_year = 2010):
             
             result.append(a)
             index_id.append(year)
-        except:
+        except Exception as e:
+            print (e)
             print('pass ', str(year))
             pass
     result = pd.DataFrame(result,index = index_id)
@@ -546,9 +547,9 @@ if __name__ =='__main__':
     Config.M1809_config(id_list,'CSV')
     
     # 2. 获取数据
-    a = Compare2Themself(Config.company_id_list[0])    #自身对比
+    a = Compare2Themself(Config.company_id_list[0],2017)    #自身对比
 #    a.to_csv('../output/compare_self.csv', encoding= 'gbk') 
-#    b1= Compare2Industry(Config.company_id_list)    #同行业对比
+    b1= Compare2Industry(Config.company_id_list)    #同行业对比
 #    b1.to_csv('../output/compare_industry.csv', encoding = 'gbk')
 #    b = data_normalize(b1)  #归一化的同行业对比
 #    b.to_csv('../output/normalize.csv', encoding = 'gbk') 

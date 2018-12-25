@@ -65,6 +65,7 @@ list 对照表
 '''
 #DataTreat用于去掉字符串中的‘，’，并将其转化浮点数
 def DataTreat(AStr):
+    AStr = str(AStr)
     flag = AStr.find(',')
     if(flag==-1):
         returnNum = float(AStr)
@@ -236,7 +237,7 @@ def GetSingleItem(stock_id, year):
         day = DatStr.strftime('%Y%m%d')
         if trade_day.is_tradeday(day):
             cnt -= 1  
-            cur_price= DataTreat(get_price.get_close_price(stock_id,day))
+            cur_price= DataTreat(str(get_price.get_close_price(stock_id,day)))
             if cur_price > 0.1:
 #                print(day)
 #                print(cur_price)
@@ -550,7 +551,7 @@ def GetSingleLocalItem(stock_id, year, quarter = 4):
 ###############################################################################
 if __name__ =='__main__':
     #网络测试
-    id_list = ['000651', '000333', '600690'] #此处可以修改
+    id_list = ['000651', '000333'] #此处可以修改
 #    Config.M1809_config(id_list,'SQL') #获取配置信息
 #    s = GetSingleItem('000333',2017)
 
